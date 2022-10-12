@@ -15,7 +15,10 @@ resource "aws_iam_policy" "parameter-store-access" {
           "ssm:GetParameters",
           "ssm:GetParameter"
         ],
-        "Resource" : "arn:aws:ssm:us-east-1:739561048503:parameter/mutable*"
+        "Resource" : [
+          "arn:aws:ssm:us-east-1:739561048503:parameter/mutable*",
+          "arn:aws:ssm:us-east-1:739561048503:parameter/nexus*"
+        ]
       },
       {
         "Sid" : "VisualEditor1",
